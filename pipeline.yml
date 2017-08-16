@@ -1,0 +1,44 @@
+jobs:
+- name: innogy_website-build-job
+  serial: true
+  plan:
+  - get: innogy_website-git
+    trigger: true
+  - put: innogy_website-docker-image
+    params: {build: innogy_website-git}
+- name: innogy_website-deploy-job_dev
+  plan:
+  - get: innogy_website-git
+    passed: [innogy_website-build-job]
+    trigger: true
+  - task: innogy_website-docker-deploy_dev
+    file: innogy_website-git/scripts/ci/task_dev_deploy.yml
+- name: innogy_website-deploy-job_qa
+  plan:
+  - get: innogy_website-git
+    passed: [innogy_website-deploy-job_dev]
+    trigger: true
+  - task: innogy_website-docker-deploy_qa
+    file: innogy_website-git/scripts/ci/task_qa_deploy.yml
+- name: innogy_website-deploy-job_stage
+  plan:
+  - get: innogy_website-git
+    passed: [innogy_website-deploy-job_qa]
+    trigger: true
+  - task: innogy_website-docker-deploy_stage
+    file: innogy_website-git/scripts/ci/task_stage_deploy.yml
+
+resources:
+- name: innogy_website-git
+  type: git
+  source:
+   uri: {{git-repo-ssh-url}}
+   private_key: {{git-private-key}}
+   branch: master
+- name: innogy_website-docker-image
+  type: docker-image
+  source:
+   repository: akqaberlin/innogy-website-node-app
+   username: {{docker-registry-user}}
+   password: {{docker-registry-pass}}
+   email: {{docker-registry-mail}}

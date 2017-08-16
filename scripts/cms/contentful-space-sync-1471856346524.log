@@ -1,0 +1,83 @@
+{
+  "additionalInfo": {},
+  "errors": [
+    {
+      "request": {
+        "url": "https://api.contentful.com:443/spaces/kk3ncyes3l6f/entries/1zEX6am5DKaqCYwoQsQEsi/published",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.contentful.management.v1+json",
+          "X-Contentful-User-Agent": "contentful-management.js/1.1.11",
+          "Authorization": "Bearer 15459037ae71cc8b69014bf742e01c93de1d3e3a29ab4297c951ae99ec7c177e",
+          "user-agent": "node.js/v6.3.1",
+          "Accept-Encoding": "gzip",
+          "X-Contentful-Version": 1
+        },
+        "method": "put",
+        "payloadData": null
+      },
+      "status": 422,
+      "statusText": "Unprocessable Entity",
+      "message": "Validation error",
+      "requestId": "5c8c3d8a87d649218a2290a79fbc69b3",
+      "details": {
+        "errors": [
+          {
+            "name": "notResolvable",
+            "link": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5aqoVowTzqsgQiIGGCEcSY"
+            },
+            "path": [
+              "fields",
+              "pages",
+              "en-US",
+              1
+            ]
+          }
+        ]
+      },
+      "webAppUrl": "https://app.contentful.com/spaces/48s3y2b8mysy/entries/1zEX6am5DKaqCYwoQsQEsi"
+    },
+    {
+      "request": {
+        "url": "https://api.contentful.com:443/spaces/kk3ncyes3l6f/entries/1gxOd4rxNIIiqEcKCke0ck/published",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.contentful.management.v1+json",
+          "X-Contentful-User-Agent": "contentful-management.js/1.1.11",
+          "Authorization": "Bearer 15459037ae71cc8b69014bf742e01c93de1d3e3a29ab4297c951ae99ec7c177e",
+          "user-agent": "node.js/v6.3.1",
+          "Accept-Encoding": "gzip",
+          "X-Contentful-Version": 1
+        },
+        "method": "put",
+        "payloadData": null
+      },
+      "status": 422,
+      "statusText": "Unprocessable Entity",
+      "message": "Validation error",
+      "requestId": "b0be1aec9701bc635078f5471b002935",
+      "details": {
+        "errors": [
+          {
+            "name": "notResolvable",
+            "link": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "1YzHmA5j5OkwqESmOICoUg"
+            },
+            "path": [
+              "fields",
+              "pages",
+              "en-US",
+              2
+            ]
+          }
+        ]
+      },
+      "webAppUrl": "https://app.contentful.com/spaces/48s3y2b8mysy/entries/1gxOd4rxNIIiqEcKCke0ck"
+    }
+  ]
+}

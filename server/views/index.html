@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="${htmlClasses}" lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>${ title }</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="${ description }">
+      <link rel="icon" href="${assetPath('img/favicons/favicon-32x32.png')}">
+      <link rel="shortcut icon" href="${assetPath('img/favicons/favicon-128x128.png')}" type="image/x-icon" />
+      <link rel="stylesheet" href="${assetPath('css/main.css')}">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="theme-color" content="#eb4b0a" />
+      <link rel="apple-touch-icon" href="${assetPath('img/favicons/apple-touch-icon-57x57.png')}" />
+      <link rel="apple-touch-icon" sizes="76x76" href="${assetPath('img/favicons/apple-touch-icon-76x76.png')}" />
+      <link rel="apple-touch-icon" sizes="152x152" href="${assetPath('img/favicons/apple-touch-icon-152x152.png')}" />
+      <meta property="og:image" content="https://innovationhub.innogy.com${assetPath('img/favicons/favicon-196x196.png')}" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <script>
+          document.querySelector('html').classList.remove('noscript')
+      </script>
+    </head>
+    <body>
+        <div class="app-root" id="root">${html}</div>
+        <script type="text/javascript">
+          var __CONFIG__ = ${config};
+          var __STATE__ = ${state};
+        </script>
+        <script type="text/javascript" src="${ assetPath('js/bundle.js') }" async></script>
+    </body>
+</html>
